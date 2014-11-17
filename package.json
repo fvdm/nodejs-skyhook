@@ -1,0 +1,29 @@
+{
+  "author": {
+    "name":               "Franklin van de Meent",
+    "email":              "fr@nkl.in",
+    "url":                "https://frankl.in"
+  },
+  "name":                 "skyhook-api",
+  "description":          "Lookup IP-location details with Skyhook",
+  "version":              "1.0.0",
+  "repository": {
+    "type":               "git",
+    "url":                "git://github.com/fvdm/nodejs-skyhook.git"
+  },
+  "bugs": {
+    "url":                "https://github.com/fvdm/nodejs-skyhook/issues"
+  },
+  "main":                 "skyhook.js",
+  "dependencies":         {},
+  "devDependencies":      {},
+  "optionalDependencies": {},
+  "engines": {
+    "node":               "*"
+  },
+  "keywords":             ["skyhook", "geoip", "api", "network", "location", "unlicense"],
+  "license": {
+    "type":               "Public Domain",
+    "url":                "https://github.com/fvdm/nodejs-skyhook/raw/master/LICENSE"
+  }
+}
