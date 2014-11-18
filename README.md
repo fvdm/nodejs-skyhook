@@ -49,18 +49,20 @@ skyhook( '1.2.3.4', function( err, data ) {
      stateIso: 'ZH' } }
 ```
 
+
 #### Errors
 
 When an error occurs `err` is an instanceof _Error_ with `.stack` trace and additional properties depending on the error.
 When everything is good, `err` is _null_ and `data` is an _object_.
 
-error message  | description                   | properties
--------------- | ----------------------------- | ----------------
-request closed | request was closed too early  | 
-request failed | request can not be done       | `.error`
-not found      | IP-address is not in database | 
-invalid data   | API returned invalid data     | 
-api error      | API returned an error         | `.code`, `.text`
+error message   | description                   | properties
+--------------- | ----------------------------- | ----------------
+request closed  | request was closed too early  | 
+request failed  | request can not be done       | `.error`
+request timeout | request took too long         | 
+not found       | IP-address is not in database | 
+invalid data    | API returned invalid data     | 
+api error       | API returned an error         | `.code`, `.text`
 
 
 Unlicense

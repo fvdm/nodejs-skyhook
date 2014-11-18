@@ -18,9 +18,10 @@ var util = require('util')
 // or use cli arguments: npm test --skyhookUser=your@email.tld --skyhookKey=abc123
 var user = process.env.npm_config_skyhookUser || process.env.SKYHOOK_USER || null
 var key = process.env.npm_config_skyhookKey || process.env.SKYHOOK_KEY || null
+var timeout = process.env.npm_config_skyhookTimeout || process.env.SKYHOOK_TIMEOUT || 5000
 
 
-var skyhook = require('./')( user, key )
+var skyhook = require('./')( user, key, timeout )
 
 
 // handle exits

@@ -14,17 +14,16 @@ sky( '1.2.3.4', callbackFunction )
 
 var app = {
   user: null,
-  key: null
+  key: null,
+  timeout: 5000
 }
 
 // the module
-module.exports = function( user, key, ip, cb ) {
+module.exports = function( user, key, timeout ) {
   app.user = user
   app.key = key
+  app.timeout = timeout || app.timeout
   
-  if( ip && cb ) {
-    getIP( ip, cb )
-  }
   return getIP
 }
 
@@ -86,12 +85,27 @@ function getIP( ip, cb ) {
       callback( error, !error && body )
     })
   })
-  
-  // request failed
-  request.on( 'error', function( e ) {
-    error = new Error('request failed')
-    error.error = e
-    callback( error )
+
+  // timeout
+  request.on( 'socket', function( socket ) {
+    if( app.timeout ) {
+      socket.setTimeout( app.timeout )
+      socket.on( 'timeout', function() {
+        doCallback( new Error('request timeout') )
+        request.abort()
+      })
+    }
+  })
+
+  // error
+  request.on( 'error', function( error ) {
+    if( error.code === 'ECONNRESET' ) {
+      var er = new Error('request timeout')
+    } else {
+      var er = new Error('request failed')
+    }
+    er.error = error
+    doCallback( er )
   })
   
   // finish
