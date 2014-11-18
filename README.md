@@ -65,6 +65,18 @@ invalid data    | API returned invalid data     |
 api error       | API returned an error         | `.code`, `.text`
 
 
+Configuration
+-------------
+
+The first _function_ is the setup and is used like this: `( user, key, [timeout] )`.
+
+name    | type   | required | description
+------- | ------ | -------- | -----------
+user    | string | yes      | account email
+key     | string | yes      | app API key
+timeout | number | no       | wait timeout in ms, default `5000`
+
+
 Unlicense
 ---------
 
