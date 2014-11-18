@@ -91,7 +91,7 @@ function getIP( ip, cb ) {
     if( app.timeout ) {
       socket.setTimeout( app.timeout )
       socket.on( 'timeout', function() {
-        doCallback( new Error('request timeout') )
+        callback( new Error('request timeout') )
         request.abort()
       })
     }
@@ -105,7 +105,7 @@ function getIP( ip, cb ) {
       var er = new Error('request failed')
     }
     er.error = error
-    doCallback( er )
+    callback( er )
   })
   
   // finish
