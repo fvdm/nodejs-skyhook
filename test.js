@@ -14,11 +14,10 @@ npm test --skyhookUser=your@email.tld --skyhookKey=abc123
 var util = require('util')
 
 // Setup
-// set env SKYHOOK_USER, SKYHOOK_KEY and SKYHOOK_GOODIP (Travis CI)
+// set env SKYHOOK_USER SKYHOOK_KEY (Travis CI)
 // or use cli arguments: npm test --skyhookUser=your@email.tld --skyhookKey=abc123
 var user = process.env.npm_config_skyhookUser || process.env.SKYHOOK_USER || null
 var key = process.env.npm_config_skyhookKey || process.env.SKYHOOK_KEY || null
-var good = process.env.npm_config_skyhookGoodIP || process.env.SKYHOOK_GOODIP || null
 
 
 var skyhook = require('./')( user, key )
@@ -152,14 +151,16 @@ queue.push( function() {
   })
 })
 
-// ! good
+// ! T-Mobile NL IP
 queue.push( function() {
-  skyhook( good, function(err, data) {
+  skyhook( '84.241.201.227', function(err, data) {
     doTest( err, 'good ip', [
       ['location', data && data.location instanceof Object],
       ['geo', data && typeof data.location.latitude === 'number'],
       ['hpe', data && typeof data.location.hpe === 'number'],
-      ['ip', data && data.ip === good],
+      ['ip', data && data.ip === '84.241.201.227'],
+      ['civic', data && data.civic instanceof Object],
+      ['countryIso', data && data.civic && data.civic.countryIso === 'NL']
     ])
   })
 })
