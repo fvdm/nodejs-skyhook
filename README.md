@@ -34,13 +34,13 @@ skyhook( '1.2.3.4', function( err, data ) {
 #### Example output
 
 ```js
-{ location: 
+{ location:
    { type: 'FIXED',
      latitude: 52.1000000000001,
      longitude: 4.6000000000000001,
      hpe: 168959 },
   ip: '1.2.3.4',
-  civic: 
+  civic:
    { state: 'Zuid-Holland',
      country: 'Netherlands',
      countryProb: 0.99,
@@ -57,11 +57,11 @@ When everything is good, `err` is _null_ and `data` is an _object_.
 
 error message   | description                   | properties
 --------------- | ----------------------------- | ----------------
-request closed  | request was closed too early  | 
+request closed  | request was closed too early  |
 request failed  | request can not be done       | `.error`
-request timeout | request took too long         | 
-not found       | IP-address is not in database | 
-invalid data    | API returned invalid data     | 
+request timeout | request took too long         |
+not found       | IP-address is not in database |
+invalid data    | API returned invalid data     |
 api error       | API returned an error         | `.code`, `.text`
 
 

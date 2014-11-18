@@ -113,7 +113,7 @@ queue.push( function() {
       process.exit(1)
     } else {
       console.log('API access: \033[1m\033[32mok\033[0m')
-      
+
       // ! should work
       doTest( err, '127.0.0.1', [
         ['data type', data instanceof Object],
@@ -122,7 +122,7 @@ queue.push( function() {
         ['age', data.demographics.age instanceof Array],
         ['age item', data.demographics.age[0] instanceof Object]
       ])
-      
+
       doNext()
     }
   })

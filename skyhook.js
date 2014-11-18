@@ -23,11 +23,11 @@ module.exports = function( user, key, timeout ) {
   app.user = user
   app.key = key
   app.timeout = timeout || app.timeout
-  
+
   return getIP
 }
 
-    
+
 function getIP( ip, cb ) {
   // prevent multiple callbacks
   var complete = false
@@ -37,7 +37,7 @@ function getIP( ip, cb ) {
       cb( err, res || null )
     }
   }
-  
+
   // build request
   var query = require('querystring').stringify({
     version: '2.0',
@@ -53,14 +53,14 @@ function getIP( ip, cb ) {
     path: '/accelerator/ip?'+ query,
     method: 'GET'
   }
-  
+
   var request = require('https').request( options )
-  
+
   // response
   request.on( 'response', function( response ) {
     var body = ''
     var error = null
-    
+
     response.on( 'data', function(ch) { body += ch })
     response.on( 'close', function() { callback( new Error('request closed') ) })
     response.on( 'end', function() {
@@ -69,7 +69,7 @@ function getIP( ip, cb ) {
       } catch(e) {
         error = new Error('invalid data')
       }
-      
+
       // process data
       if( body.error ) {
         error = new Error('api error')
@@ -81,7 +81,7 @@ function getIP( ip, cb ) {
           error = new Error('not found')
         }
       }
-      
+
       callback( error, !error && body )
     })
   })
@@ -107,7 +107,7 @@ function getIP( ip, cb ) {
     er.error = error
     callback( er )
   })
-  
+
   // finish
   request.end()
 }
