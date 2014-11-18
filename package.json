@@ -25,5 +25,8 @@
   "license": {
     "type":               "Public Domain",
     "url":                "https://github.com/fvdm/nodejs-skyhook/raw/master/LICENSE"
+  },
+  "scripts": {
+    "test":               "node test.js"
   }
 }
