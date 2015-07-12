@@ -67,6 +67,6 @@ function getIP (ip, callback) {
       }
     }
 
-    callback (error, !error && body);
+    callback (error, !error && data);
   });
 }
