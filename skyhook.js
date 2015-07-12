@@ -58,7 +58,7 @@ function getIP (ip, callback) {
     if (err) {
       error = new Error ('request failed');
       error.error = err;
-      callback (error)#
+      callback (error);
       return;
     }
 
