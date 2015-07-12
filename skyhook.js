@@ -39,7 +39,7 @@ function getIP (ip, callback) {
       key: app.key,
       timestamp: Math.round (Date.now () / 1000)
     },
-    header: {
+    headers: {
       'User-Agent': 'npmjs.com/package/skyhook-api',
       'Accept': 'application/json'
     }
