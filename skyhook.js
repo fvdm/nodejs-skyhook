@@ -55,7 +55,13 @@ function getIP (ip, callback) {
       error = new Error ('invalid data');
     }
 
-    // process data
+    if (err) {
+      error = new Error ('request failed');
+      error.error = err;
+      callback (error)#
+      return;
+    }
+
     if (data instanceof Object && data.error) {
       error = new Error ('api error');
       error.code = data.error.code;
