@@ -88,7 +88,7 @@ function getIP (ip, cb) {
   // timeout
   request.on ('socket', function (socket) {
     if (app.timeout) {
-      socket.setTimeout (app.timeout);
+      socket.setTimeout (parseInt (app.timeout));
       socket.on ('timeout', function () {
         callback (new Error ('request timeout'));
         request.abort ();
