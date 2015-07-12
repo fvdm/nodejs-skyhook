@@ -100,7 +100,7 @@ function testObj (src) {
 queue.push (function () {
   skyhook ('127.0.0.1', function (err, data) {
     if (err) {
-      console.log ('API access: \033[1m\033[31mfailed\033[0m ('+ err.message +')');
+      console.error ('\033[1m\033[31mFAIL\033[0m - API access');
       console.log ();
       console.log (err);
       console.log ();
@@ -108,7 +108,7 @@ queue.push (function () {
       errors++;
       process.exit (1);
     } else {
-      console.log ('API access: \033[1m\033[32mok\033[0m');
+      console.log ('\033[1m\033[32mgood\033[0m - API access');
 
       // ! should work
       doTest (err, '127.0.0.1', [
