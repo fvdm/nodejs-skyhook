@@ -6,10 +6,6 @@ Source:        https://github.com/fvdm/nodejs-skyhook
 Feedback:      https://github.com/fvdm/nodejs-skyhook/issues
 License:       Unlicense (Public Domain)
                See https://github.com/fvdm/nodejs-skyhook/raw/master/LICENSE
-
-Usage:
-var sky = require ('skyhook.js') ('email', 'apikey');
-sky ('1.2.3.4', callbackFunction);
 */
 
 var http = require ('httpreq');
