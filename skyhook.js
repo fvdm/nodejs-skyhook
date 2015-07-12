@@ -40,7 +40,7 @@ function getIP (ip, callback) {
       timestamp: Math.round (Date.now () / 1000)
     },
     header: {
-      'User-Agent': 'npmjs.com/skyhook-api',
+      'User-Agent': 'npmjs.com/package/skyhook-api',
       'Accept': 'application/json'
     }
   };
