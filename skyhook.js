@@ -29,7 +29,7 @@ module.exports = function (user, key, timeout) {
 };
 
 
-function getIP (ip, cb) {
+function getIP (ip, callback) {
   var url = 'https://context.skyhookwireless.com/accelerator/ip';
   var options = {
     parameters: {
