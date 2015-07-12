@@ -43,7 +43,7 @@ function getIP (ip, cb) {
     ip: ip,
     user: app.user,
     key: app.key,
-    timestamp: Math.round (Date.now () / 1000);
+    timestamp: Math.round (Date.now () / 1000)
   });
 
   var options = {
