@@ -62,7 +62,7 @@ function getIP (ip, callback) {
       error.text = data.error.message;
     } else if (data.data) {
       data = data.data;
-      if (!Object.keys (data) .length) {
+      if (Object.keys (data) .length < 2) {
         error = new Error ('not found');
       }
     }
