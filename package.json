@@ -22,10 +22,7 @@
     "node":               "*"
   },
   "keywords":             ["skyhook", "geoip", "api", "network", "location", "unlicense"],
-  "license": {
-    "type":               "Public Domain",
-    "url":                "https://github.com/fvdm/nodejs-skyhook/raw/master/LICENSE"
-  },
+  "license":              "Unlicense",
   "scripts": {
     "test":               "node test.js"
   }
