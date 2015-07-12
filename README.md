@@ -9,12 +9,9 @@ Get IP-address location details from the [Skyhook](http://skyhookwireless.com) H
 Installation
 ------------
 
-`npm install skyhook-api`
+Normal: `npm install skyhook-api`
 
-Or the latest development version:
-
-`npm install git+https://github.com/fvdm/nodejs-skyhook`
-
+Development: `npm install fvdm/nodejs-skyhook#develop`
 
 You need an account at [Skyhook](https://my.skyhookwireless.com/), create an app there for the _Hyperlocal IP_ service and get its API key.
 
@@ -23,12 +20,12 @@ Usage
 -----
 
 ```js
-var skyhook = require('skyhook-api')( 'user@email.tld', 'API KEY' )
+var skyhook = require ('skyhook-api') ('user@email.tld', 'API KEY');
 
 // Lookup IP
-skyhook( '1.2.3.4', function( err, data ) {
-  console.log( err || data )
-})
+skyhook ('1.2.3.4', function (err, data) {
+  console.log (err || data);
+});
 ```
 
 #### Example output
@@ -56,7 +53,7 @@ When an error occurs `err` is an instanceof _Error_ with `.stack` trace and addi
 When everything is good, `err` is _null_ and `data` is an _object_.
 
 error message   | description                   | properties
---------------- | ----------------------------- | ----------------
+----------------|-------------------------------|-----------------
 request closed  | request was closed too early  |
 request failed  | request can not be done       | `.error`
 request timeout | request took too long         |
@@ -71,7 +68,7 @@ Configuration
 The first _function_ is the setup and is used like this: `( user, key, [timeout] )`.
 
 name    | type   | required | description
-------- | ------ | -------- | -----------
+--------|--------|----------|------------
 user    | string | yes      | account email
 key     | string | yes      | app API key
 timeout | number | no       | wait timeout in ms, default `5000`
