@@ -6,18 +6,8 @@ Get IP-address location details from the [Skyhook](http://skyhookwireless.com) H
 [![Build Status](https://travis-ci.org/fvdm/nodejs-skyhook.svg?branch=master)](https://travis-ci.org/fvdm/nodejs-skyhook)
 
 
-Installation
-------------
-
-Normal: `npm install skyhook-api`
-
-Development: `npm install fvdm/nodejs-skyhook#develop`
-
-You need an account at [Skyhook](https://my.skyhookwireless.com/), create an app there for the _Hyperlocal IP_ service and get its API key.
-
-
-Usage
------
+Example
+-------
 
 ```js
 var skyhook = require ('skyhook-api') ('user@email.tld', 'API KEY');
@@ -28,26 +18,55 @@ skyhook ('1.2.3.4', function (err, data) {
 });
 ```
 
-#### Example output
+#### Output
 
 ```js
-{ location:
-   { type: 'FIXED',
-     latitude: 52.1000000000001,
-     longitude: 4.6000000000000001,
-     hpe: 168959 },
-  ip: '1.2.3.4',
-  civic:
-   { state: 'Zuid-Holland',
-     country: 'Netherlands',
-     countryProb: 0.99,
-     countryIso: 'NL',
-     stateProb: 0.99,
-     stateIso: 'ZH' } }
+{
+  location:
+    {
+      type: 'FIXED',
+      latitude: 52.1000000000001,
+      longitude: 4.6000000000000001,
+      hpe: 168959
+    },
+    ip: '1.2.3.4',
+    civic:
+      {
+        state: 'Zuid-Holland',
+        country: 'Netherlands',
+        countryProb: 0.99,
+        countryIso: 'NL',
+        stateProb: 0.99,
+        stateIso: 'ZH'
+      }
+}
 ```
 
 
-#### Errors
+Installation
+------------
+
+Normal: `npm install skyhook-api`
+
+Development: `npm install fvdm/nodejs-skyhook#develop`
+
+You need an account at [Skyhook](https://my.skyhookwireless.com/), create an app there for the _Hyperlocal IP_ service and get its API key.
+
+
+Configuration
+-------------
+
+The first _function_ is the setup and is used like this: `( user, key, [timeout] )`.
+
+name    | type   | required | description
+--------|--------|----------|-----------------------------------
+user    | string | yes      | account email
+key     | string | yes      | app API key
+timeout | number | no       | wait timeout in ms, default `5000`
+
+
+Errors
+------
 
 When an error occurs `err` is an instanceof _Error_ with `.stack` trace and additional properties depending on the error.
 When everything is good, `err` is _null_ and `data` is an _object_.
@@ -58,18 +77,6 @@ not found      | IP-address is not in database |
 request failed | Request can not be made       | `.error`
 invalid data   | API returned invalid data     |
 api error      | API returned an error         | `.code`, `.text`
-
-
-Configuration
--------------
-
-The first _function_ is the setup and is used like this: `( user, key, [timeout] )`.
-
-name    | type   | required | description
---------|--------|----------|------------
-user    | string | yes      | account email
-key     | string | yes      | app API key
-timeout | number | no       | wait timeout in ms, default `5000`
 
 
 Unlicense
