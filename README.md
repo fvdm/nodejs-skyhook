@@ -22,23 +22,21 @@ skyhook ('1.2.3.4', function (err, data) {
 
 ```js
 {
-  location:
-    {
-      type: 'FIXED',
-      latitude: 52.1000000000001,
-      longitude: 4.6000000000000001,
-      hpe: 168959
-    },
-    ip: '1.2.3.4',
-    civic:
-      {
-        state: 'Zuid-Holland',
-        country: 'Netherlands',
-        countryProb: 0.99,
-        countryIso: 'NL',
-        stateProb: 0.99,
-        stateIso: 'ZH'
-      }
+  location: {
+    type: 'FIXED',
+    latitude: 52.1000000000001,
+    longitude: 4.6000000000000001,
+    hpe: 168959
+  },
+  ip: '1.2.3.4',
+  civic: {
+    state: 'Zuid-Holland',
+    country: 'Netherlands',
+    countryProb: 0.99,
+    countryIso: 'NL',
+    stateProb: 0.99,
+    stateIso: 'ZH'
+  }
 }
 ```
 
