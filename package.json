@@ -1,31 +1,37 @@
 {
   "author": {
-    "name":               "Franklin van de Meent",
-    "email":              "fr@nkl.in",
-    "url":                "https://frankl.in"
+    "name": "Franklin van de Meent",
+    "email": "fr@nkl.in",
+    "url": "https://frankl.in"
   },
-  "name":                 "skyhook-api",
-  "description":          "Lookup IP-location details with Skyhook",
-  "version":              "1.1.0",
+  "name": "skyhook-api",
+  "description": "Lookup IP-location details with Skyhook",
+  "version": "1.1.0",
   "repository": {
-    "type":               "git",
-    "url":                "git://github.com/fvdm/nodejs-skyhook.git"
+    "type": "git",
+    "url": "git://github.com/fvdm/nodejs-skyhook.git"
   },
   "bugs": {
-    "url":                "https://github.com/fvdm/nodejs-skyhook/issues"
+    "url": "https://github.com/fvdm/nodejs-skyhook/issues"
   },
-  "main":                 "skyhook.js",
+  "main": "skyhook.js",
   "dependencies": {
-   "httpreq":             "0.4.x"
+   "httpreq": "^0.4.16"
   },
-  "devDependencies":      {},
-  "optionalDependencies": {},
+  "devDependencies": {},
   "engines": {
-    "node":               ">=0.8.0"
+    "node": ">=0.12"
   },
-  "keywords":             ["skyhook", "geoip", "api", "network", "location", "unlicense"],
-  "license":              "Unlicense",
+  "keywords": [
+    "skyhook",
+    "geoip",
+    "api",
+    "network",
+    "location",
+    "unlicense"
+  ],
+  "license": "Unlicense",
   "scripts": {
-    "test":               "node test.js"
+    "test": "node test.js"
   }
 }
