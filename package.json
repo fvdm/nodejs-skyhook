@@ -18,7 +18,10 @@
   "dependencies": {
    "httpreq": "^0.4.16"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "dotest": "^1.9.1",
+    "eslint": "^2.9.0"
+  },
   "engines": {
     "node": ">=0.12"
   },
