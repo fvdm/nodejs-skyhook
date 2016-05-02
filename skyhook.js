@@ -17,6 +17,16 @@ var app = {
 };
 
 
+/**
+ * Process API response
+ *
+ * @callback callback
+ * @param err {Error, null} - Error
+ * @param res {object} - Response data
+ * @param callback {function} - `function (err, data) {}`
+ * @returns {void}
+ */
+
 function processResponse (err, res, callback) {
   var data = res && res.body || '';
   var error = null;
@@ -51,6 +61,16 @@ function processResponse (err, res, callback) {
   callback (null, data);
 }
 
+
+/**
+ * Communicate with API
+ *
+ * @callback callback
+ * @param ip {string} - IP-address to lookup
+ * @param callback {function} - `function (err, data) {}`
+ * @returns {void}
+ */
+
 function getIP (ip, callback) {
   var options = {
     url: 'https://context.skyhookwireless.com/accelerator/ip',
@@ -73,7 +93,16 @@ function getIP (ip, callback) {
   });
 }
 
-// the module
+
+/**
+ * Module interface
+ *
+ * @param user {string} - Username/email
+ * @param key {string} - API key
+ * @param [timeout = 5000] - Request time out in ms, 1000 = 1 sec
+ * @returns getIP {function}
+ */
+
 module.exports = function (user, key, timeout) {
   app.user = user;
   app.key = key;
