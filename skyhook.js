@@ -16,13 +16,6 @@ var app = {
   timeout: 5000
 };
 
-// the module
-module.exports = function (user, key, timeout) {
-  app.user = user;
-  app.key = key;
-  app.timeout = timeout || app.timeout;
-  return getIP;
-};
 
 
 function getIP (ip, callback) {
@@ -72,3 +65,11 @@ function getIP (ip, callback) {
     callback (error, !error && data);
   });
 }
+
+// the module
+module.exports = function (user, key, timeout) {
+  app.user = user;
+  app.key = key;
+  app.timeout = timeout || app.timeout;
+  return getIP;
+};
