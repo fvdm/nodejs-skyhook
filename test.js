@@ -52,4 +52,5 @@ dotest.add ('good ip', function (test) {
   });
 });
 
+// Run tests
 dotest.run ();
