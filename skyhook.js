@@ -17,10 +17,44 @@ var app = {
 };
 
 
+function processResponse (err, res, callback) {
+  var data = res && res.body || '';
+  var error = null;
+
+  try {
+    data = JSON.parse (data);
+  } catch (e) {
+    error = new Error ('invalid data');
+    error.statusCode = res.statusCode;
+    error.data = data;
+    callback (error);
+    return;
+  }
+
+  if (err) {
+    error = new Error ('request failed');
+    error.error = err;
+    callback (error);
+    return;
+  }
+
+  if (data.error) {
+    error = new Error ('api error');
+    error.statusCode = res.statusCode;
+    error.code = data.error.code;
+    error.text = data.error.message;
+    callback (error);
+    return;
+  }
+
+  data = data.data || data;
+  callback (null, data);
+}
 
 function getIP (ip, callback) {
-  var url = 'https://context.skyhookwireless.com/accelerator/ip';
   var options = {
+    url: 'https://context.skyhookwireless.com/accelerator/ip',
+    method: 'GET',
     parameters: {
       version: '2.0',
       ip: ip,
@@ -34,35 +68,8 @@ function getIP (ip, callback) {
     }
   };
 
-  http.get (url, options, function (err, res) {
-    var data = res && res.body || null;
-    var error = null;
-
-    try {
-      data = JSON.parse (data);
-    } catch (e) {
-      error = new Error ('invalid data');
-    }
-
-    if (err) {
-      error = new Error ('request failed');
-      error.error = err;
-      callback (error);
-      return;
-    }
-
-    if (data instanceof Object && data.error) {
-      error = new Error ('api error');
-      error.code = data.error.code;
-      error.text = data.error.message;
-    } else if (data.data) {
-      data = data.data;
-      if (Object.keys (data) .length < 2) {
-        error = new Error ('not found');
-      }
-    }
-
-    callback (error, !error && data);
+  http.doRequest (options, function (err, res) {
+    processResponse (err, res, callback);
   });
 }
 
