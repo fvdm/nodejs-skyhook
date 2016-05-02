@@ -13,7 +13,6 @@ var app = require ('./');
 
 // Setup
 // set env SKYHOOK_USER SKYHOOK_KEY (Travis CI)
-// or use cli arguments: npm test --skyhookUser=your@email.tld --skyhookKey=abc123
 var user = process.env.SKYHOOK_USER || null;
 var key = process.env.SKYHOOK_KEY || null;
 var timeout = process.env.SKYHOOK_TIMEOUT || 5000;
