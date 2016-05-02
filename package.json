@@ -16,7 +16,7 @@
   },
   "main": "skyhook.js",
   "dependencies": {
-   "httpreq": "^0.4.16"
+    "httpreq": "^0.4.22"
   },
   "devDependencies": {},
   "engines": {
