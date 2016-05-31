@@ -6,7 +6,7 @@
   },
   "name": "skyhook-api",
   "description": "Lookup IP-location details with Skyhook",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/fvdm/nodejs-skyhook.git"
