@@ -48,8 +48,6 @@ Installation
 
 Normal: `npm install skyhook-api`
 
-Development: `npm install fvdm/nodejs-skyhook#develop`
-
 You need an account at [Skyhook](https://my.skyhookwireless.com/), create an app there for the _Hyperlocal IP_ service and get its API key.
 
 
@@ -111,6 +109,5 @@ For more information, please refer to <http://unlicense.org>
 Author
 ------
 
-Franklin van de Meent
-| [Website](https://frankl.in/)
-| [Github](https://github.com/fvdm)
+[Franklin van de Meent](https://frankl.in)
+
