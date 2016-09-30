@@ -33,6 +33,7 @@ dotest.add ('Error: api error', function (test) {
   });
 });
 
+
 // T-Mobile NL IP
 dotest.add ('good ip', function (test) {
   skyhook ('84.241.201.227', function (err, data) {
@@ -50,6 +51,7 @@ dotest.add ('good ip', function (test) {
       .done ();
   });
 });
+
 
 // Run tests
 dotest.run ();
