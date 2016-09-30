@@ -17,7 +17,7 @@ Example
 var skyhook = require ('skyhook-api') ('user@email.tld', 'API KEY');
 
 // Lookup IP
-skyhook ('1.2.3.4', function (err, data) {
+skyhook ('1.2.3.4', (err, data) => {
   console.log (err || data);
 });
 ```
