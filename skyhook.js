@@ -10,7 +10,7 @@ License:       Unlicense (Public Domain)
 
 'use strict';
 
-const http = require ('httpreq');
+const httpreq = require ('httpreq');
 
 let app = {
   user: null,
@@ -88,7 +88,7 @@ function getIP (ip, callback) {
     }
   };
 
-  http.doRequest (options, (err, res) => {
+  httpreq.doRequest (options, (err, res) => {
     processResponse (err, res, callback);
   });
 }
