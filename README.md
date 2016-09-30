@@ -5,6 +5,7 @@ Get IP-address location details from the [Skyhook](http://skyhookwireless.com) H
 
 [![npm](https://img.shields.io/npm/v/skyhook-api.svg?maxAge=3600)](https://github.com/fvdm/nodejs-skyhook/blob/master/CHANGELOG.md)
 [![Build Status](https://travis-ci.org/fvdm/nodejs-skyhook.svg?branch=master)](https://travis-ci.org/fvdm/nodejs-skyhook)
+[![Coverage Status](https://coveralls.io/repos/github/fvdm/nodejs-skyhook/badge.svg?branch=master)](https://coveralls.io/github/fvdm/nodejs-skyhook?branch=master)
 [![bitHound Dependencies](https://www.bithound.io/github/fvdm/nodejs-skyhook/badges/dependencies.svg)](https://www.bithound.io/github/fvdm/nodejs-skyhook/master/dependencies/npm)
 
 
