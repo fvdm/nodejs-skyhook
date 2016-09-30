@@ -8,16 +8,16 @@ License       Unlicense (Public Domain)
               See https://github.com/fvdm/nodejs-skyhook/raw/master/LICENSE
 */
 
-var dotest = require ('dotest');
-var app = require ('./');
+const dotest = require ('dotest');
+const app = require ('./');
 
 // Setup
 // set env SKYHOOK_USER SKYHOOK_KEY (Travis CI)
-var user = process.env.SKYHOOK_USER || null;
-var key = process.env.SKYHOOK_KEY || null;
-var timeout = process.env.SKYHOOK_TIMEOUT || 5000;
+const user = process.env.SKYHOOK_USER || null;
+const key = process.env.SKYHOOK_KEY || null;
+const timeout = process.env.SKYHOOK_TIMEOUT || 5000;
 
-var skyhook = app && app (user, key, timeout);
+const skyhook = app && app (user, key, timeout);
 
 
 // invalid
@@ -36,8 +36,8 @@ dotest.add ('Error: api error', function (test) {
 // T-Mobile NL IP
 dotest.add ('good ip', function (test) {
   skyhook ('84.241.201.227', function (err, data) {
-    var location = data && data.location;
-    var civic = data && data.civic;
+    const location = data && data.location;
+    const civic = data && data.civic;
 
     test (err)
       .isObject ('fail', 'data', data)
