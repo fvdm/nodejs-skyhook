@@ -88,7 +88,7 @@ function getIP (ip, callback) {
     }
   };
 
-  http.doRequest (options, function (err, res) {
+  http.doRequest (options, (err, res) => {
     processResponse (err, res, callback);
   });
 }
@@ -103,7 +103,7 @@ function getIP (ip, callback) {
  * @return getIP {function}
  */
 
-module.exports = function (user, key, timeout) {
+module.exports = (user, key, timeout) => {
   app.user = user;
   app.key = key;
   app.timeout = timeout || app.timeout;
