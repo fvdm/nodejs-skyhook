@@ -75,6 +75,7 @@ function getIP (ip, callback) {
   const options = {
     url: 'https://context.skyhookwireless.com/accelerator/ip',
     method: 'GET',
+    timeout: app.timeout,
     parameters: {
       version: '2.0',
       ip: ip,
