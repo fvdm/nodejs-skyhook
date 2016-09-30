@@ -1,7 +1,7 @@
 skyhook-api
 ===========
 
-Get IP-address location details from the [Skyhook](http://skyhookwireless.com) Hyperlocal IP service in [node.js](https://nodejs.org/).
+Lookup IP location with the [Skyhook](http://skyhookwireless.com) Hyperlocal IP service in [node.js](https://nodejs.org/) (unofficial)
 
 [![npm](https://img.shields.io/npm/v/skyhook-api.svg?maxAge=3600)](https://github.com/fvdm/nodejs-skyhook/blob/master/CHANGELOG.md)
 [![Build Status](https://travis-ci.org/fvdm/nodejs-skyhook.svg?branch=master)](https://travis-ci.org/fvdm/nodejs-skyhook)
