@@ -1,7 +1,7 @@
 skyhook-api
 ===========
 
-Get IP-address location details from the [Skyhook](http://skyhookwireless.com) Hyperlocal IP service in [node.js](http://nodejs.org/).
+Get IP-address location details from the [Skyhook](http://skyhookwireless.com) Hyperlocal IP service in [node.js](https://nodejs.org/).
 
 [![npm](https://img.shields.io/npm/v/skyhook-api.svg?maxAge=3600)](https://github.com/fvdm/nodejs-skyhook/blob/master/CHANGELOG.md)
 [![Build Status](https://travis-ci.org/fvdm/nodejs-skyhook.svg?branch=master)](https://travis-ci.org/fvdm/nodejs-skyhook)
@@ -71,12 +71,11 @@ Errors
 When an error occurs `err` is an instanceof _Error_ with `.stack` trace and additional properties depending on the error.
 When everything is good, `err` is _null_ and `data` is an _object_.
 
-error message  | description                   | properties
----------------|-------------------------------|-----------------
-not found      | IP-address is not in database |
-request failed | Request can not be made       | `.error`
-invalid data   | API returned invalid data     |
-api error      | API returned an error         | `.code`, `.text`
+error message  | description               | properties
+---------------|---------------------------|-----------------
+request failed | Request can not be made   | `.error`
+invalid data   | API returned invalid data |
+api error      | API returned an error     | `.code`, `.text`
 
 
 Unlicense
