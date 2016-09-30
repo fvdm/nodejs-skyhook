@@ -8,9 +8,9 @@ License:       Unlicense (Public Domain)
                See https://github.com/fvdm/nodejs-skyhook/raw/master/LICENSE
 */
 
-var http = require ('httpreq');
+const http = require ('httpreq');
 
-var app = {
+let app = {
   user: null,
   key: null,
   timeout: 5000
@@ -28,8 +28,8 @@ var app = {
  */
 
 function processResponse (err, res, callback) {
-  var data = res && res.body || '';
-  var error = null;
+  let data = res && res.body || '';
+  let error = null;
 
   try {
     data = JSON.parse (data);
@@ -72,7 +72,7 @@ function processResponse (err, res, callback) {
  */
 
 function getIP (ip, callback) {
-  var options = {
+  const options = {
     url: 'https://context.skyhookwireless.com/accelerator/ip',
     method: 'GET',
     parameters: {
