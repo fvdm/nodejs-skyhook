@@ -53,5 +53,21 @@ dotest.add ('Error: api error', function (test) {
 });
 
 
+// Request failed
+dotest.add ('Error: request failed', function (test) {
+  const tmp = app && app (user, key, 1);
+
+  tmp ('invalid input', function (err, data) {
+    test ()
+      .isError ('fail', 'err', err)
+      .isExactly ('fail', 'err.message', err && err.message, 'request failed')
+      .isError ('fail', 'err.error', err && err.error)
+      .isExactly ('fail', 'err.error.code', err && err.error && err.error.code, 'TIMEOUT')
+      .isUndefined ('fail', 'data', data)
+      .done ();
+  });
+});
+
+
 // Run tests
 dotest.run ();
