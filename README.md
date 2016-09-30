@@ -112,4 +112,3 @@ Author
 ------
 
 [Franklin van de Meent](https://frankl.in)
-
