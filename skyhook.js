@@ -35,30 +35,27 @@ function processResponse (err, res, callback) {
     data = JSON.parse (data);
   } catch (e) {
     error = new Error ('invalid data');
-    error.statusCode = res.statusCode;
     error.data = data;
-    callback (error);
-    return;
   }
 
   if (err) {
     error = new Error ('request failed');
     error.error = err;
-    callback (error);
-    return;
   }
 
   if (data.error) {
     error = new Error ('api error');
-    error.statusCode = res.statusCode;
     error.code = data.error.code;
     error.text = data.error.message;
-    callback (error);
-    return;
   }
 
-  data = data.data || data;
-  callback (null, data);
+  if (error) {
+    error.statusCode = res && res.statusCode;
+    callback (error);
+  } else {
+    data = data.data || data;
+    callback (null, data);
+  }
 }
 
 
