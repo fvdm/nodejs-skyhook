@@ -24,7 +24,7 @@ let app = {
  * @param err {Error, null} - Error
  * @param res {object} - Response data
  * @param callback {function} - `function (err, data) {}`
- * @returns {void}
+ * @return {void}
  */
 
 function processResponse (err, res, callback) {
@@ -68,7 +68,7 @@ function processResponse (err, res, callback) {
  * @callback callback
  * @param ip {string} - IP-address to lookup
  * @param callback {function} - `function (err, data) {}`
- * @returns {void}
+ * @return {void}
  */
 
 function getIP (ip, callback) {
@@ -100,7 +100,7 @@ function getIP (ip, callback) {
  * @param user {string} - Username/email
  * @param key {string} - API key
  * @param [timeout = 5000] - Request time out in ms, 1000 = 1 sec
- * @returns getIP {function}
+ * @return getIP {function}
  */
 
 module.exports = function (user, key, timeout) {
