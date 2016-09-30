@@ -20,20 +20,6 @@ const timeout = process.env.SKYHOOK_TIMEOUT || 5000;
 const skyhook = app && app (user, key, timeout);
 
 
-// invalid
-dotest.add ('Error: api error', function (test) {
-  skyhook ('invalid input', function (err, data) {
-    test ()
-      .isError ('fail', 'err', err)
-      .isExactly ('fail', 'err.message', err && err.message, 'api error')
-      .isExactly ('warn', 'err.code', err && err.code, 400)
-      .isExactly ('warn', 'err.test', err && err.text, 'malformed ip')
-      .isUndefined ('fail', 'data', data)
-      .done ();
-  });
-});
-
-
 // T-Mobile NL IP
 dotest.add ('good ip', function (test) {
   skyhook ('84.241.201.227', function (err, data) {
@@ -48,6 +34,20 @@ dotest.add ('good ip', function (test) {
       .isExactly ('fail', 'data.ip', data && data.ip, '84.241.201.227')
       .isObject ('fail', 'data.civic', civic)
       .isExactly ('fail', 'data.civic.countryIso', civic && civic.countryIso, 'NL')
+      .done ();
+  });
+});
+
+
+// API error
+dotest.add ('Error: api error', function (test) {
+  skyhook ('invalid input', function (err, data) {
+    test ()
+      .isError ('fail', 'err', err)
+      .isExactly ('fail', 'err.message', err && err.message, 'api error')
+      .isExactly ('warn', 'err.code', err && err.code, 400)
+      .isExactly ('warn', 'err.test', err && err.text, 'malformed ip')
+      .isUndefined ('fail', 'data', data)
       .done ();
   });
 });
