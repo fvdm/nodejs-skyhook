@@ -8,6 +8,8 @@ License       Unlicense (Public Domain)
               See https://github.com/fvdm/nodejs-skyhook/raw/master/LICENSE
 */
 
+'use strict';
+
 const dotest = require ('dotest');
 const app = require ('./');
 
