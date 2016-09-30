@@ -25,12 +25,12 @@
     "node": ">=4.0.0"
   },
   "keywords": [
-    "skyhook",
+    "api",
     "geoip",
     "ip",
-    "api",
-    "network",
     "location",
+    "network",
+    "skyhook",
     "unlicense"
   ],
   "license": "Unlicense",
