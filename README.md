@@ -1,6 +1,8 @@
 skyhook-api
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fvdm/nodejs-skyhook.svg)](https://greenkeeper.io/)
+
 Lookup IP location with the [Skyhook](http://skyhookwireless.com) Hyperlocal IP service in [node.js](https://nodejs.org/) (unofficial)
 
 [![npm](https://img.shields.io/npm/v/skyhook-api.svg?maxAge=3600)](https://github.com/fvdm/nodejs-skyhook/blob/master/CHANGELOG.md)
